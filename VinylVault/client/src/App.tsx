@@ -11,20 +11,12 @@ import { AuthProvider } from "./hooks/use-auth";
 
 function Router() {
   return (
-    // When deploying to GitHub Pages, uncomment the line below and replace 
-    // "vinyl-record-collection" with your actual repository name
-  
-    //   <ProtectedRoute path="/" component={HomePage} />
-    //   <Route path="/auth" component={AuthPage} />
-    //   <Route component={NotFound} />
-    // </Switch>
-    
-    // For local development, use this:
-    //<Switch>
-    //  <ProtectedRoute path="/" component={HomePage} />
-     // <Route path="/auth" component={AuthPage} />
-      //<Route component={NotFound} />
-      <Switch basename="/vinyl-vault">
+    // For GitHub Pages deployment with your repository name
+    <Switch basename="/vinyl-vault">
+      <ProtectedRoute path="/" component={HomePage} />
+      <Route path="/auth" component={AuthPage} />
+      <Route component={NotFound} />
+    </Switch>
   );
 }
 
