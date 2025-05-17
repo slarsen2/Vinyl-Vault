@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 207 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+  
+  /* Vinyl Vault Theme Colors */
+  --navy: 240 45% 18%;
+  --burgundy: 340 65% 33%;
+  --amber: 40 90% 51%;
+  --cream: 43 60% 94%;
+  --charcoal: 0 0% 20%;
+  
+  /* Sidebar Colors (set to navy by default) */
+  --sidebar-background: var(--navy);
+  --sidebar-foreground: var(--cream);
+  --sidebar-primary: var(--amber);
+  --sidebar-primary-foreground: var(--navy);
+  --sidebar-accent: var(--burgundy);
+  --sidebar-accent-foreground: var(--cream);
+  --sidebar-border: var(--amber);
+  --sidebar-ring: var(--amber);
+  
+  /* Chart Colors */
+  --chart-1: var(--burgundy);
+  --chart-2: var(--amber);
+  --chart-3: var(--cream);
+  --chart-4: var(--navy);
+  --chart-5: 220 14% 96%;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 207 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply font-sans bg-navy text-cream;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* Vinyl record styling */
+.vinyl-after::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 30%;
+  background-color: hsl(var(--cream));
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.record-grooves {
+  background: repeating-radial-gradient(
+    circle at center,
+    rgba(26, 27, 65, 0.2) 0px,
+    rgba(26, 27, 65, 0.21) 1px,
+    rgba(26, 27, 65, 0.22) 2px,
+    rgba(26, 27, 65, 0.2) 3px
+  );
+}
+
+.search-animation {
+  animation: searchPulse 1.5s infinite;
+}
+
+@keyframes searchPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.vinyl-spin {
+  transition: transform 0.3s ease;
+}
+
+.record-card:hover .vinyl-spin {
+  transform: rotate(15deg);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--navy));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--amber));
+  border-radius: 3px;
+}
+
+/* Animations */
+.animate-spin-slow {
+  animation: spin 40s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
