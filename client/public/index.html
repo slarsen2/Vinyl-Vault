@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Vinyl Vault - A vinyl record collection manager for music enthusiasts" />
+    <title>Vinyl Vault</title>
+    <!-- GitHub Pages SPA routing script -->
+    <script type="text/javascript">
+      // This script helps with routing on GitHub Pages for SPAs
+      (function() {
+        // Single Page Apps for GitHub Pages
+        // MIT License
+        var repo = "Vinyl-Vault"; // Your repository name
+        
+        // Don't run this script on localhost/development
+        if(window.location.hostname === 'localhost' || 
+           window.location.hostname === '127.0.0.1') {
+          return;
+        }
+        
+        // Check if we need to redirect
+        var l = window.location;
+        if(l.pathname.split('/')[1] === repo) {
+          var paths = l.pathname.split('/').slice(2);
+          var newPath = '/' + paths.join('/');
+          if(newPath === '') newPath = '/';
+          
+          // Store the path we need to redirect to
+          sessionStorage.setItem('redirect_path', newPath);
+          
+          // Only redirect if we're not already at the root
+          if(newPath !== '/' || l.search || l.hash) {
+            // GitHub Pages won't find this path, but that's okay, we'll catch it
+            l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + 
+                      '/' + repo + '/');
+          }
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
