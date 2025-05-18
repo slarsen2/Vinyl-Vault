@@ -28,7 +28,7 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname, "client"),
   // Add base path for GitHub Pages deployment
-  base: process.env.NODE_ENV === 'production' ? `/${Vinyl-Vault}/` : '/',
+  base: process.env.NODE_ENV === 'production' ? `/${REPO_NAME}/` : '/',
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
