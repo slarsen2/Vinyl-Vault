@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
-// Update this to match your GitHub repository name
+// Explicitly define the repository name as a string
 const REPO_NAME = 'Vinyl-Vault';
 
 export default defineConfig({
@@ -27,7 +27,7 @@ export default defineConfig({
     },
   },
   root: path.resolve(import.meta.dirname, "client"),
-  // Add base path for GitHub Pages deployment
+  // Add base path for GitHub Pages deployment with string literal
   base: process.env.NODE_ENV === 'production' ? `/${REPO_NAME}/` : '/',
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
