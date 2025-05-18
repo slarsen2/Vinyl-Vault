@@ -2,25 +2,13 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Vinyl Vault</title>
-  <script type="text/javascript">
-    // GitHub Pages SPA redirect hack
-    // Single Page Apps for GitHub Pages
-    // MIT License
-    // https://github.com/rafgraph/spa-github-pages
-    var segmentCount = 1; // Adjust this to match your repository setup
-    var l = window.location;
-    var repo = "Vinyl-Vault"; // Your repository name
-    l.replace(
-      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      '/' + repo + '/' +
-      l.pathname.split('/').slice(segmentCount + 1).join('/') +
-      (l.search ? l.search : '') +
-      (l.hash ? l.hash : '')
-    );
+  <title>Redirecting...</title>
+  <script>
+    // Redirect to the hash-based URL
+    window.location.replace("https://slarsen2.github.io/Vinyl-Vault/#" + window.location.pathname.replace('/Vinyl-Vault', ''));
   </script>
 </head>
 <body>
-  Redirecting to main page...
+  <p>Redirecting to the application...</p>
 </body>
 </html>
